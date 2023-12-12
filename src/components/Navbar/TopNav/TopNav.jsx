@@ -13,7 +13,7 @@ const TopNav = () => {
 
     return (
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: "center", padding: "20px", backgroundColor: colors.primary[500], borderBottomStyle: "solid", borderBottomColor: colors.secondary[500] }}>
-            <Typography variant="h5" component="div" flexGrow={1}>
+            <Typography variant="h3" component="div" flexGrow={1}>
                 Dashbord
             </Typography>
 
@@ -28,8 +28,8 @@ const TopNav = () => {
 
                 {/* Profile info */}
                 <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 1 }}>
-                    <Box sx={{ textAlign: "end" }}>
-                        <Typography variant="h6">
+                    <Box sx={{ textAlign: "end", display: { xs: "none", sm: "block" } }}>
+                        <Typography variant="h5">
                             {username}
                         </Typography>
                         <Typography variant="p" sx={{ color: "#787486" }}>

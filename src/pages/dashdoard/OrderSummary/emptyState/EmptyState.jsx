@@ -10,7 +10,7 @@ const EmptyState = () => {
     return <>
         {/* empty state */}
         <Box sx={{
-            minWidth: "282px",
+            // minWidth: "282px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",

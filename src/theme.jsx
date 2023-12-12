@@ -15,15 +15,15 @@ export const tokens = () => {
             900: "#333333"
         },
         secondary: {
-            100: "#fdfdfe",
-            200: "#fbfbfd",
-            300: "#f8f9fc",
-            400: "#f6f7fb",
+            100: "#e4e3e7",
+            200: "#c9c7cf",
+            300: "#aeacb6",
+            400: "#8B8D97",
             500: "#f4f5fa",
-            600: "#c3c4c8",
-            700: "#929396",
-            800: "#626264",
-            900: "#313132"
+            600: "#787486",
+            700: "#484650",
+            800: "#302e36",
+            900: "#18171b"
         },
         accent: {
             100: "#f6d7e0",
@@ -47,18 +47,51 @@ export const themeSettings = () => {
                 main: colors.primary[500]
             },
             secondary: {
-                main: colors.secondary[500]
+                main: colors.secondary[500],
+                dark: colors.secondary[600]
             },
             accent: {
-                main: colors.accent[500],
                 light: colors.accent[300],
-
+                main: colors.accent[500],
             },
             background: {
                 default: colors.secondary[500]
+            },
+            text: {
+                light: colors.secondary[400],
+                main: colors.secondary[500],
+                dark: colors.secondary[600]
             }
+        },
+
+        typography: {
+            fontFamily: ["DM Sans", "sans - serif"].join(","),
+            fontSize: 12,
+            h1: {
+                fontFamily: ["DM Sans", "sans - serif"].join(","),
+                fontSize: 40,
+            },
+            h2: {
+                fontFamily: ["DM Sans", "sans - serif"].join(","),
+                fontSize: 32,
+            },
+            h3: {
+                fontFamily: ["DM Sans", "sans - serif"].join(","),
+                fontSize: 24,
+            },
+            h4: {
+                fontFamily: ["DM Sans", "sans - serif"].join(","),
+                fontSize: 20,
+            },
+            h5: {
+                fontFamily: ["DM Sans", "sans - serif"].join(","),
+                fontSize: 16,
+            },
+            h6: {
+                fontFamily: ["DM Sans", "DM Mono", "sans - serif"].join(","),
+                fontSize: 12,
+            },
         }
-        // Todo I need to add topograghy
     }
 }
 

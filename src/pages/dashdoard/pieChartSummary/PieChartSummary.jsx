@@ -6,17 +6,24 @@ import { PieChart } from "@mui/x-charts";
 
 const PieChartSummary = () => {
     const [selectedValue, setSelectedValue] = useState("week");
+
     const colors = tokens();
-    const palette = [colors.accent[500], colors.secondary[500], "#FFCC91"]
+    const palette = [colors.accent[500], colors.secondary[500], "#FFCC91"];
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value)
+    }
     return <>
         <Box sx={{
             maxWidth: "321px",
+            height: "100%",
             display: "flex",
             flexDirection: "column",
             backgroundColor: colors.primary[500],
-            gap:3,
+            gap: 3,
             p: 2,
-            borderRadius: 2
+            borderRadius: 2,
+            overflow: "auto",
+
         }}>
             {/* title */}
             {/* FormControl */}
@@ -25,16 +32,18 @@ const PieChartSummary = () => {
                 justifyContent: "space-between",
                 alignItems: "center"
             }}>
-                <Typography variant="h6" component="div">
+                <Typography variant="h4" component="div">
                     Marketinng
                 </Typography>
-                <CustomFormControl selectedValue={selectedValue} handleChange={selectedValue} />
+                <CustomFormControl selectedValue={selectedValue} handleChange={handleChange} />
             </Box>
             {/*  Pie Chart with the legend*/}
             <Box sx={{
                 mx: "auto"
             }}>
-                <PieChart colors={palette} series={[
+                <PieChart colors={palette} sx={{
+                    maxWidth: "321px"
+                }} series={[
                     {
                         data: [
                             { id: 0, value: 0, label: "Acquisition" },

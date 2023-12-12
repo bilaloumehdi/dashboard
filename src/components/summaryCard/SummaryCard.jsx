@@ -20,19 +20,8 @@ const styles = {
     },
 };
 
-const SummaryCard = ({ title }) => {
+const SummaryCard = ({ isActive, icon, statistics }) => {
     const [selectedValue, setSelectedValue] = useState("week");
-    const struct = [
-        {
-            name: "Customers",
-            number: "0",
-            increase: "+0.00"
-        }, {
-            name: "Active",
-            number: "0",
-            increase: "+0.00"
-        }
-    ]
     const colors = tokens();
 
     const handleChange = (event) => {
@@ -41,11 +30,9 @@ const SummaryCard = ({ title }) => {
 
     return (
         <Card variant="outlined" sx={{
-            maxWidth: "321px",
-            height: "145px",
-            mt: 3,
-            backgroundColor: colors.primary,
-            borderRadius: 2
+            backgroundColor: isActive ? colors.accent[500] : colors.primary[500],
+            borderRadius: 2,
+            color: isActive ? colors.primary[500] : "black",
         }}>
             {/* Summary Content */}
             <CardContent sx={{
@@ -54,29 +41,21 @@ const SummaryCard = ({ title }) => {
                 gap: 2
             }}>
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                    <CustomIconButton backgroundColor={colors.accent[200]} iconColor="accent" />
-                    <CustomFormControl selectedValue={selectedValue} handleChange={handleChange} />
+                    {icon}
+                    {isActive || <CustomFormControl selectedValue={selectedValue} handleChange={handleChange} />}
                 </Box>
 
                 {/* Summary Stats */}
                 <Box sx={{
                     display: "flex", justifyContent: "space-between",
                 }}>
-                    {struct.map(s => {
+                    {statistics.map(s => {
                         return <Box sx={{ flexGrow: 1 }}>
-                            <Typography variant="h5" >{s.name}</Typography>
-                            <Typography variant="h6" sx={{ display: "inline", mr: 1, mt: 1, fontWeight: "bold" }} >{s.number}</Typography>
-                            {s.increase && <Typography variant="p" color="green"></Typography>}
+                            <Typography variant="h5" color={isActive ? "primary" : "text.light"} >{s.name}</Typography>
+                            <Typography variant="h4" sx={{ display: "inline", mr: 1, mt: 1, fontWeight: "bold" }} color={isActive ? "primary" : "black"} >{s.number}</Typography>
+                            {s.increase && <Typography variant="p" color={isActive ? "primary" : "#519C66"}>{s.increase}</Typography>}
                         </Box>
                     })}
-
-
-                    {/* <Box sx={{ flexGrow: 1 }}>
-                        <Typography variant="h5" >Active</Typography>
-                        <Typography variant="h6" sx={{ display: "inline", fontWeight: "bold", mr: 1, mt: 1 }}>0</Typography> */}
-                    {/* si increse reate exist it will rendred */}
-                    {/* <Typography variant="p" color="green">+0.00%</Typography>
-                    </Box> */}
                 </Box>
             </CardContent>
         </Card>

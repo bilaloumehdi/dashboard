@@ -5,7 +5,6 @@ const Navbar = () => {
     return <>
         <TopNav />
         <BreadCrumbs />
-
     </>
 }
 

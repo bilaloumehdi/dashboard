@@ -2,7 +2,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { useTheme } from "./theme";
 import './App.css'
 import Navbar from "./components/Navbar";
-import { BrowserRouter,Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/dashdoard/Dashboard";
 
 function App() {
@@ -12,9 +12,9 @@ function App() {
       <CssBaseline />
       <div className="app">
         <BrowserRouter>
-        <Navbar />
+          <Navbar />
           <Routes>
-            <Route path="/" element={<Dashboard />}/>
+            <Route path="/" element={<Dashboard />} />
           </Routes>
         </BrowserRouter>
       </div>

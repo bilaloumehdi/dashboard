@@ -11,9 +11,9 @@ const BreadCrumbs = () => {
             <Link to="/" color="accent" underline="hover">
                 <HomeRoundedIcon color="accent" />
             </Link>
-            <Typography color="secondary" sx={{ cursor: "pointer" }}>Page</Typography>
-            <Typography color="secondary" sx={{ cursor: "pointer" }}>Page</Typography>
-            <Typography color="secondary" sx={{ cursor: "pointer" }}>Page</Typography>
+            <Typography variant="h6" color="text.light" sx={{ cursor: "pointer" }}>Page</Typography>
+            <Typography variant="h6" color="text.light" sx={{ cursor: "pointer" }}>Page</Typography>
+            <Typography variant="h6" color="text.light" sx={{ cursor: "pointer" }}>Page</Typography>
         </Breadcrumbs>
     </Box>
 }
