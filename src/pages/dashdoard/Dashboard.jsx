@@ -1,8 +1,6 @@
 import React from "react";
 // import TopNav from "../../components/Navbar/TopNav/TopNav";
-import Navbar from "../../components/Navbar";
 import SummaryCard from "../../components/summaryCard/SummaryCard";
-import RecentOrders from "./OrderSummary/OrderSummary";
 import PieChartSummary from "./pieChartSummary/PieChartSummary";
 import BarChartSummary from "./barChartSummary/BarChartSummary";
 import Box from "@mui/material/Box";
@@ -30,12 +28,6 @@ const Dashboard = () => {
         },
         gap: "20px",
         p: 3,
-        bgColor: {
-            xs: "blue",
-            sm: "red",
-            md: "green",
-            lg: "secondary"
-        }
     }}>
         {/* Row1  */}
         <Box sx={{
